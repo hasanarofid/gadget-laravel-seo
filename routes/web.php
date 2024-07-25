@@ -10,7 +10,9 @@ use App\Http\Controllers\MisiController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\VideoController;
 
 /*
@@ -66,6 +68,17 @@ Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/about/ubah/{id}'
 Route::middleware(['auth:sanctum', 'verified'])->resource('dashboard/misi', MisiController::class);
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/misi/edit/{id}', 'App\Http\Controllers\MisiController@edit');
 Route::middleware(['auth:sanctum', 'verified'])->post('dashboard/misi/update', 'App\Http\Controllers\MisiController@update');
+
+//kategori
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/kategori', KategoriController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/kategori/destroy/{id}', 'App\Http\Controllers\KategoriController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/kategori/edit/{id}', 'App\Http\Controllers\KategoriController@edit');
+
+//produk
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/produk', ProdukController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/produk/destroy/{id}', 'App\Http\Controllers\ProdukController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/produk/edit/{id}', 'App\Http\Controllers\ProdukController@edit');
+
 // frontend
 Route::get('/','App\Http\Controllers\FrontendController@index');
 //Route::get('App\Http\Controllers\FrontendController@index_footer');
