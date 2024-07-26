@@ -14,7 +14,15 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\VideoController;
+use Illuminate\Support\Facades\Artisan;
 
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    return "Cache is cleared";
+});
 /*
 |--------------------------------------------------------------------------
 | Web Routes
