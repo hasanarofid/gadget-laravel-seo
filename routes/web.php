@@ -21,6 +21,12 @@ Route::get('/clear-cache', function() {
     Artisan::call('config:clear');
     Artisan::call('route:clear');
     Artisan::call('view:clear');
+    
+    // For Laravel versions older than 5.5
+    if (class_exists('Artisan') && method_exists(Artisan::class, 'call')) {
+        Artisan::call('optimize');
+    }
+
     return "Cache is cleared";
 });
 /*
