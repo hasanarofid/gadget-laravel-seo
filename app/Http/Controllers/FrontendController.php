@@ -13,7 +13,8 @@ use App\Models\customer;
 use App\Models\portfolio;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\Menu;
+use App\Models\SubMenu;
 class FrontendController extends Controller
 {
     /**
@@ -32,6 +33,7 @@ class FrontendController extends Controller
         $customer = customer::all();
         $about = about::all();
         $card = card::all();
+        $menus = Menu::with('subMenus.artikel')->get();
         return view ('frontend.home',[
             'blog' => $blog,
             'misi' => $misi,
@@ -41,7 +43,8 @@ class FrontendController extends Controller
             'user' => $user,
             'customer' => $customer,
             'about' => $about,
-            'card' => $card
+            'card' => $card,
+            'menus' => $menus,
         ]);
     }
 

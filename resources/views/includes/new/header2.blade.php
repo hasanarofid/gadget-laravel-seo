@@ -1,128 +1,77 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-custom">
-    <!-- Logo visible only on large screens -->
-    <a class="navbar-brand d-none d-lg-none" href="#">
-      <img src="{{ asset('theme/img/logoophone2.png') }}" alt="Logo">
-    </a>
+      <!-- Logo visible only on large screens -->
+      <a class="navbar-brand d-none d-lg-none" href="#">
+          <img src="{{ asset('theme/img/logoophone2.png') }}" alt="Logo">
+      </a>
 
-    <!-- Hamburger menu icon visible only on mobile screens -->
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <svg width="18" height="18" viewBox="0 0 18 18">
-        <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12" class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom">
-          <animate id="globalnav-anim-menutrigger-bread-bottom-open" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 2 12, 16 12; 2 9, 16 9; 3.5 15, 15 3.5"></animate>
-          <animate id="globalnav-anim-menutrigger-bread-bottom-close" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 3.5 15, 15 3.5; 2 9, 16 9; 2 12, 16 12"></animate>
-        </polyline>
-        <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5" class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top">
-          <animate id="globalnav-anim-menutrigger-bread-top-open" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 2 5, 16 5; 2 9, 16 9; 3.5 3.5, 15 15"></animate>
-          <animate id="globalnav-anim-menutrigger-bread-top-close" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 3.5 3.5, 15 15; 2 9, 16 9; 2 5, 16 5"></animate>
-        </polyline>
-      </svg>
-    </button>
+      <!-- Hamburger menu icon visible only on mobile screens -->
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <svg width="18" height="18" viewBox="0 0 18 18">
+              <polyline id="globalnav-menutrigger-bread-bottom" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" points="2 12, 16 12" class="globalnav-menutrigger-bread globalnav-menutrigger-bread-bottom">
+                  <animate id="globalnav-anim-menutrigger-bread-bottom-open" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 2 12, 16 12; 2 9, 16 9; 3.5 15, 15 3.5"></animate>
+                  <animate id="globalnav-anim-menutrigger-bread-bottom-close" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 3.5 15, 15 3.5; 2 9, 16 9; 2 12, 16 12"></animate>
+              </polyline>
+              <polyline id="globalnav-menutrigger-bread-top" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" points="2 5, 16 5" class="globalnav-menutrigger-bread globalnav-menutrigger-bread-top">
+                  <animate id="globalnav-anim-menutrigger-bread-top-open" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 2 5, 16 5; 2 9, 16 9; 3.5 3.5, 15 15"></animate>
+                  <animate id="globalnav-anim-menutrigger-bread-top-close" attributeName="points" keyTimes="0;0.5;1" dur="0.24s" begin="indefinite" fill="freeze" calcMode="spline" keySplines="0.42, 0, 1, 1;0, 0, 0.58, 1" values=" 3.5 3.5, 15 15; 2 9, 16 9; 2 5, 16 5"></animate>
+              </polyline>
+          </svg>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mx-auto">
-        <!-- Logo visible only on mobile screens -->
-        <li class="nav-item d-lg-block">
-          <a class="navbar-brand nav-link" href="#">
-            <img src="{{ asset('theme/img/logoophone2.png') }}" alt="Logo">
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Store</a>
-        </li>
-        <!-- Add more nav items here -->
-        <li class="nav-item has-submenu">
-          <a class="nav-link" href="#" id="macDropdown" role="button">
-            Mac
-          </a>
-          <div class="submenu" aria-labelledby="macDropdown">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6">
-                  <h4 class="submenu-title">Left Column</h4>
-                  <a class="dropdown-item" href="#">MacBook Air</a>
-                  <a class="dropdown-item" href="#">MacBook Pro</a>
-                  <a class="dropdown-item" href="#">iMac</a>
-                  <a class="dropdown-item" href="#">Mac Mini</a>
-                </div>
-                <div class="col-md-6">
-                  <h4 class="submenu-title">Right Column</h4>
-                  <a class="dropdown-item" href="#">MacBook Air</a>
-                  <a class="dropdown-item" href="#">MacBook Pro</a>
-                  <a class="dropdown-item" href="#">iMac</a>
-                  <a class="dropdown-item" href="#">Mac Mini</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+              <!-- Logo visible only on mobile screens -->
+              <li class="nav-item d-lg-block">
+                  <a class="navbar-brand nav-link" href="#">
+                      <img src="{{ asset('theme/img/logoophone2.png') }}" alt="Logo">
+                  </a>
+              </li>
+              @foreach ($menus as $menu)
+                  @if ($menu->subMenus->isEmpty())
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">{{ $menu->nama }}</a>
+                      </li>
+                  @else
+                      <li class="nav-item has-submenu">
+                          <a class="nav-link" href="#" id="{{ strtolower($menu->nama) }}Dropdown" role="button">
+                              {{ $menu->nama }}
+                          </a>
+                          <div class="submenu" aria-labelledby="{{ strtolower($menu->nama) }}Dropdown">
+                              <div class="container">
+                                  <div class="row">
+                                      @foreach ($menu->subMenus as $subMenu)
+                                          <div class="col-md-6">
+                                            <h6 >{{ $subMenu->kategori_title }}</h6>
+                                            <a class="dropdown-item" style="font-weight: bold;font-size: 28px" href="{{ url('artikel/'.$subMenu->artikel->slug) }}">{{ $subMenu->sub }}</a>
+                                           </div>
+                                      @endforeach
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
+                  @endif
+              @endforeach
+              <li class="nav-item d-lg-block">
+                  <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+              </li>
+              <li class="nav-item d-lg-block">
+                  <a class="nav-link" href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+              </li>
+          </ul>
+      </div>
 
-        <li class="nav-item has-submenu">
-          <a class="nav-link" href="#" id="iPhoneDropdown" role="button">
-            iPhone
-          </a>
-          <div class="submenu" aria-labelledby="iPhoneDropdown">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6">
-                  <h4 class="submenu-title">Left Column iPhone</h4>
-                  <a class="dropdown-item" href="#">MacBook Air</a>
-                  <a class="dropdown-item" href="#">MacBook Pro</a>
-                  <a class="dropdown-item" href="#">iMac</a>
-                  <a class="dropdown-item" href="#">Mac Mini</a>
-                </div>
-                <div class="col-md-6">
-                  <h4 class="submenu-title">Right Column iPhone</h4>
-                  <a class="dropdown-item" href="#">MacBook Air</a>
-                  <a class="dropdown-item" href="#">MacBook Pro</a>
-                  <a class="dropdown-item" href="#">iMac</a>
-                  <a class="dropdown-item" href="#">Mac Mini</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <!-- Add more nav items here -->
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#">Watch</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">AirPods</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">TV & Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Entertainment</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Accessories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Support</a>
-        </li>
-        <li class="nav-item d-lg-block">
-          <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-        </li>
-        <li class="nav-item d-lg-block">
-          <a class="nav-link" href="#"><i class="fa-solid fa-bag-shopping"></i></a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Icons visible only on large screens -->
-    <div class="navbar-nav d-none d-lg-none">
-      <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa-solid fa-bag-shopping"></i></a>
-      </li>
-    </div>
+      <!-- Icons visible only on large screens -->
+      <div class="navbar-nav d-none d-lg-none">
+          <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+          </li>
+      </div>
   </nav>
 </header>
-
 
   <br /><br />
 
