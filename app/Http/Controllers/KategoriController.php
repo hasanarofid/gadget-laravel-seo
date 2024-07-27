@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
-use App\Models\kategori;
+use App\Models\Kategori;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StorekategoriRequest;
 use App\Http\Requests\UpdatecustomerRequest;
@@ -19,7 +19,7 @@ class KategoriController extends Controller
     public function index()
     {
 
-        $kategoris = DB::table('kategoris')->get();
+        $kategoris = Kategori::get();
         return view('dashboard.kategori', ['kategori' => $kategoris]);
     }
 
@@ -46,7 +46,7 @@ class KategoriController extends Controller
         ]);
 
         $input = $request->all();
-        kategori::create($input);
+        Kategori::create($input);
 
         return redirect('/dashboard/kategori');
     }
@@ -70,7 +70,7 @@ class KategoriController extends Controller
      */
     public function edit(kategori $kategori, $id)
     {
-        $kategori = DB::table('kategoris')->where('id', $id)->first();
+        $kategori = Kategori::where('id', $id)->first();
         return view('dashboard.kategori-edit', compact('kategori'));
     }
 
@@ -81,7 +81,7 @@ class KategoriController extends Controller
      * @param  \App\Models\kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatekategoriRequest $request, kategori $kategori)
+    public function update(UpdatekategoriRequest $request, Kategori $kategori)
     {
         $request->validate([
             'name' => 'required',
@@ -98,9 +98,9 @@ class KategoriController extends Controller
      * @param  \App\Models\kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(kategori $kategori, $id)
+    public function destroy(Kategori $kategori, $id)
     {
-        DB::table('kategoris')->where('id', $id)->delete();
+        Kategori::where('id', $id)->delete();
         return redirect('/dashboard/kategori');
     }
 }

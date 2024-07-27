@@ -5,6 +5,9 @@ use App\Http\Controllers\Contact;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\Dashboard\ArtikelController;
+use App\Http\Controllers\Dashboard\MenuController;
+use App\Http\Controllers\Dashboard\SubmenuController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MisiController;
 use App\Http\Controllers\GalleryController;
@@ -92,6 +95,22 @@ Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/kategori/edit/{i
 Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/produk', ProdukController::class);
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/produk/destroy/{id}', 'App\Http\Controllers\ProdukController@destroy');
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/produk/edit/{id}', 'App\Http\Controllers\ProdukController@edit');
+
+//menu
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/menu', MenuController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/menu/destroy/{id}', 'App\Http\Controllers\Dashboard\MenuController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/menu/edit/{id}', 'App\Http\Controllers\Dashboard\MenuController@edit');
+
+
+//sub menu
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/submenu', SubmenuController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/submenu/destroy/{id}', 'App\Http\Controllers\Dashboard\SubmenuController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/submenu/edit/{id}', 'App\Http\Controllers\Dashboard\SubmenuController@edit');
+
+//artikel
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/artikel', ArtikelController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/artikel/destroy/{id}', 'App\Http\Controllers\Dashboard\ArtikelController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/artikel/edit/{id}', 'App\Http\Controllers\Dashboard\ArtikelController@edit');
 
 // frontend
 Route::get('/','App\Http\Controllers\FrontendController@index');

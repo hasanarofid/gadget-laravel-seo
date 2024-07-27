@@ -13,11 +13,9 @@ class CreateArtikelsTable extends Migration
             $table->string('judul');
             $table->string('slug')->unique();
             $table->text('konten');
-            $table->unsignedBigInteger('menu_id');
-            $table->timestamps();
+             $table->timestamps();
 
-            $table->foreign('menu_id')->references('id')->on('menu')->onDelete('cascade');
-        });
+         });
     }
 
     public function down()

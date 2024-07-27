@@ -73,11 +73,11 @@ class InitialDataSeeder extends Seeder
 
         // Artikel
         $artikel = [
-            ['judul' => 'New MacBook Air with M2 Chip', 'konten' => 'The new MacBook Air with M2 chip is here.', 'menu_id' => 2],
-            ['judul' => 'Introducing iPhone 14', 'konten' => 'iPhone 14 is packed with new features.', 'menu_id' => 4],
-            ['judul' => 'Apple Watch Series 7 Features', 'konten' => 'Discover the new features of Apple Watch Series 7.', 'menu_id' => 5],
-            ['judul' => 'Apple TV 4K: The Ultimate TV Experience', 'konten' => 'Enjoy stunning visuals and audio with Apple TV 4K.', 'menu_id' => 7],
-            ['judul' => 'AirPods Pro with Spatial Audio', 'konten' => 'Experience immersive sound with AirPods Pro.', 'menu_id' => 6],
+            ['judul' => 'New MacBook Air with M2 Chip', 'konten' => 'The new MacBook Air with M2 chip is here.'],
+            ['judul' => 'Introducing iPhone 14', 'konten' => 'iPhone 14 is packed with new features.'],
+            ['judul' => 'Apple Watch Series 7 Features', 'konten' => 'Discover the new features of Apple Watch Series 7.'],
+            ['judul' => 'Apple TV 4K: The Ultimate TV Experience', 'konten' => 'Enjoy stunning visuals and audio with Apple TV 4K.'],
+            ['judul' => 'AirPods Pro with Spatial Audio', 'konten' => 'Experience immersive sound with AirPods Pro.'],
         ];
 
         foreach ($artikel as $a) {

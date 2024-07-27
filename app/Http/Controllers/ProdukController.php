@@ -6,7 +6,7 @@ use App\Models\gallery;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreprodukRequest;
 use App\Http\Requests\UpdateprodukRequest;
-use App\Models\produk;
+use App\Models\Produk;
 
 class ProdukController extends Controller
 {
@@ -17,7 +17,10 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        $produks = DB::table('produks')->select('produks.name as namaProduk','produks.id','kategoris.name as namakategori')->leftJoin('kategoris', 'produks.id_kategori', '=', 'kategoris.id')->get();
+        $produks = Produk::with('kategori')->select('produk.nama as namaProduk', 'produk.id', 'kategori.nama as namakategori')
+        ->leftJoin('kategori', 'produk.kategori_id', '=', 'kategori.id')
+        ->get();
+
         // mengirim data blog ke view 
         return view('dashboard.produk', ['produk' => $produks]);
     }

@@ -12,6 +12,7 @@ class Menu extends Model
     use HasFactory, HasSlug;
 
     protected $table = 'menu';
+    protected $fillable = ['nama', 'slug']; // Add all fields you want to be mass assignable
 
     public function getSlugOptions() : SlugOptions
     {

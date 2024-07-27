@@ -9,21 +9,77 @@
                         <x-jet-application-mark class="block h-9 w-auto" />
                     </a>
                 </div>
+                <!-- Add CSS for the dropdown -->
+<style>
+    .relative:hover .absolute {
+        display: block;
+    }
+</style>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <div class="relative group" style="margin-top:20px;">
+                        <x-jet-nav-link href="#">
+                            {{ __('Setting Header') }} <i class="fa fa-caret-down ml-1"></i>
+                        </x-jet-nav-link>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg mt-1 rounded-md">
+                            <x-jet-nav-link href="{{ route('kategori.index') }}" :active="request()->routeIs('kategori')">
+                                {{ __('Kategori') }}
+                            </x-jet-nav-link>
+                            
+
+                            <x-jet-nav-link href="{{ route('menu.index') }}" :active="request()->routeIs('menu')">
+                                {{ __('Menu') }}
+                            </x-jet-nav-link> <br>
+
+                            <x-jet-nav-link href="{{ route('submenu.index') }}" :active="request()->routeIs('submenu')">
+                                {{ __('Sub Menu') }}
+                            </x-jet-nav-link> <br>
+                           
+                        </div>
+                    </div>
+
+                    <div class="relative group" style="margin-top:20px;">
+                        <x-jet-nav-link href="#">
+                            {{ __('Setting Home') }} <i class="fa fa-caret-down ml-1"></i>
+                        </x-jet-nav-link>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg mt-1 rounded-md">
+                            <x-jet-nav-link href="{{ route('gallery.index') }}" :active="request()->routeIs('gallery')">
+                                {{ __('Galeri Utama') }}
+                            </x-jet-nav-link>
+                            <x-jet-nav-link href="{{ route('produk.index') }}" :active="request()->routeIs('produk')">
+                                {{ __('Produk') }}
+                            </x-jet-nav-link><br>
+
+                            <x-jet-nav-link href="{{ route('menu.index') }}" :active="request()->routeIs('menu')">
+                                {{ __('Menu') }}
+                            </x-jet-nav-link> <br>
+
+                            <x-jet-nav-link href="{{ route('submenu.index') }}" :active="request()->routeIs('submenu')">
+                                {{ __('Sub Menu') }}
+                            </x-jet-nav-link> <br>
+                           
+                        </div>
+                    </div>
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('home.index') }}" :active="request()->routeIs('home')">
+                    {{-- <x-jet-nav-link href="{{ route('home.index') }}" :active="request()->routeIs('home')">
                         {{ __('Home') }}
+                    </x-jet-nav-link> --}}
+                    {{-- <x-jet-nav-link href="{{ route('gallery.index') }}" :active="request()->routeIs('gallery')">
+                        {{ __('Gallery') }}
+                    </x-jet-nav-link> --}}
+                    <x-jet-nav-link href="{{ route('artikel.index') }}" :active="request()->routeIs('artikel')">
+                        {{ __('Artikel') }}
                     </x-jet-nav-link>
-                     <x-jet-nav-link href="{{ route('blog.index') }}" :active="request()->routeIs('blog')">
+                    <x-jet-nav-link href="{{ route('produk.index') }}" :active="request()->routeIs('produk')">
+                        {{ __('Produk') }}
+                    </x-jet-nav-link>
+                     {{-- <x-jet-nav-link href="{{ route('blog.index') }}" :active="request()->routeIs('blog')">
                         {{ __('Blog') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('gallery.index') }}" :active="request()->routeIs('gallery')">
-                        {{ __('Gallery') }}
-                    </x-jet-nav-link>
+                   
                      <x-jet-nav-link href="{{ route('portfolio.index') }}" :active="request()->routeIs('portfolio')">
                         {{ __('Portfolio') }}
                     </x-jet-nav-link>
@@ -36,12 +92,7 @@
                     <x-jet-nav-link href="{{ route('about.index') }}" :active="request()->routeIs('about')">
                         {{ __('About') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('kategori.index') }}" :active="request()->routeIs('kategori')">
-                        {{ __('Kategori') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('produk.index') }}" :active="request()->routeIs('produk')">
-                        {{ __('Produk') }}
-                    </x-jet-nav-link>
+                   --}}
                     
                 </div>
             </div>

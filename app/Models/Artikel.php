@@ -12,6 +12,8 @@ class Artikel extends Model
     use HasFactory, HasSlug;
 
     protected $table = 'artikel';
+    protected $fillable = ['judul', 'slug','konten']; // Add all fields you want to be mass assignable
+
 
     public function getSlugOptions() : SlugOptions
     {
@@ -20,8 +22,5 @@ class Artikel extends Model
             ->saveSlugsTo('slug');
     }
 
-    public function menu()
-    {
-        return $this->belongsTo(Menu::class);
-    }
+
 }
