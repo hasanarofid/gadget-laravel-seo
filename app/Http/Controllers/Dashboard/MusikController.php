@@ -43,12 +43,10 @@ class MusikController extends Controller
         $request->validate([
             'name' => 'required',
             'title' => 'required',
-            'kategori' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $input = $request->all();
-
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -56,7 +54,21 @@ class MusikController extends Controller
             $input['image'] = "$profileImage";
         }
 
-        Gallery::create($input);
+        $galleryData = [
+            'name' => $input['name'],
+            'title' => $input['title'],
+            'kategori' => 'section-musik',
+        ];
+
+        if (isset($input['image'])) {
+            $galleryData['image'] = $input['image'];
+        }
+
+        if (isset($input['artikel_id'])) {
+            $galleryData['artikel_id'] = $input['artikel_id'];
+        }
+
+        gallery::create($galleryData);
 
         return redirect(route('musik.index'));
     }
