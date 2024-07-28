@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Contact;
+use App\Http\Controllers\Dashboard\GallleriSection1Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CustomerController;
@@ -111,6 +112,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/submenu/edit/{id
 Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/artikel', ArtikelController::class);
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/artikel/destroy/{id}', 'App\Http\Controllers\Dashboard\ArtikelController@destroy');
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/artikel/edit/{id}', 'App\Http\Controllers\Dashboard\ArtikelController@edit');
+
+//galllery section 1
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/gallleriSection1', GallleriSection1Controller::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/gallleriSection1/destroy/{id}', 'App\Http\Controllers\Dashboard\GallleriSection1Controller@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/gallleriSection1/edit/{id}', 'App\Http\Controllers\Dashboard\GallleriSection1Controller@edit');
 
 // frontend
 Route::get('/','App\Http\Controllers\FrontendController@index');
