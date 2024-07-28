@@ -2,6 +2,12 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Contact;
+use App\Http\Controllers\Dashboard\CompareController;
+use App\Http\Controllers\Dashboard\GallleriSection1Controller;
+use App\Http\Controllers\Dashboard\OverviewController;
+use App\Http\Controllers\Dashboard\OverviewProdukController;
+use App\Http\Controllers\Dashboard\TechSpecsController;
+use App\Http\Controllers\Dashboard\TipeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CustomerController;
@@ -135,6 +141,36 @@ Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/film/edit/{id}',
 Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/musik', MusikController::class);
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/musik/destroy/{id}', 'App\Http\Controllers\Dashboard\MusikController@destroy');
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/musik/edit/{id}', 'App\Http\Controllers\Dashboard\MusikController@edit');
+
+
+//tipe produk
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/tipe', TipeController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/tipe/destroy/{id}', 'App\Http\Controllers\Dashboard\TipeController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/tipe/edit/{id}', 'App\Http\Controllers\Dashboard\TipeController@edit');
+
+//overview produk
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/overviewProduk', OverviewProdukController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/overviewProduk/destroy/{id}', 'App\Http\Controllers\Dashboard\OverviewProdukController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/overviewProduk/edit/{id}', 'App\Http\Controllers\Dashboard\OverviewProdukController@edit');
+
+
+//overview item produk
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/overview', OverviewController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/overview/destroy/{id}', 'App\Http\Controllers\Dashboard\OverviewController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/overview/edit/{id}', 'App\Http\Controllers\Dashboard\OverviewController@edit');
+
+
+//techSpecs item produk
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/techSpecs', TechSpecsController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/techSpecs/destroy/{id}', 'App\Http\Controllers\Dashboard\TechSpecsController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/techSpecs/edit/{id}', 'App\Http\Controllers\Dashboard\TechSpecsController@edit');
+
+
+//compare item produk
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/compare', CompareController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/compare/destroy/{id}', 'App\Http\Controllers\Dashboard\CompareController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/compare/edit/{id}', 'App\Http\Controllers\Dashboard\CompareController@edit');
+
 
 // frontend
 Route::get('/','App\Http\Controllers\FrontendController@index');

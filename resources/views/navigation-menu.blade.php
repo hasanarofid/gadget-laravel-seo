@@ -15,6 +15,9 @@
         display: block;
     }
 </style>
+ <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-jet-nav-link>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -23,9 +26,7 @@
                             {{ __('Setting Header') }} <i class="fa fa-caret-down ml-1"></i>
                         </x-jet-nav-link>
                         <div class="absolute hidden group-hover:block bg-white shadow-lg mt-1 rounded-md">
-                            <x-jet-nav-link href="{{ route('kategori.index') }}" :active="request()->routeIs('kategori')">
-                                {{ __('Kategori') }}
-                            </x-jet-nav-link>
+                          
                             
 
                             <x-jet-nav-link href="{{ route('menu.index') }}" :active="request()->routeIs('menu')">
@@ -59,9 +60,40 @@
                            
                         </div>
                     </div>
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+
+                    <div class="relative group" style="margin-top:20px;">
+                        <x-jet-nav-link href="#">
+                            {{ __('Setting Produk') }} <i class="fa fa-caret-down ml-1"></i>
+                        </x-jet-nav-link>
+                        <div class="absolute hidden group-hover:block bg-white shadow-lg mt-1 rounded-md">
+                            <x-jet-nav-link href="{{ route('produk.index') }}" :active="request()->routeIs('produk')">
+                                {{ __('Produk') }}
+                            </x-jet-nav-link>
+
+                            <x-jet-nav-link href="{{ route('overviewProduk.index') }}" :active="request()->routeIs('overviewProduk')">
+                                {{ __('Overview Produk') }}
+                            </x-jet-nav-link>
+                            <x-jet-nav-link href="{{ route('kategori.index') }}" :active="request()->routeIs('kategori')">
+                                {{ __('Kategori/Tipe Produk') }}
+                            </x-jet-nav-link>
+                           
+                            <x-jet-nav-link href="{{ route('overview.index') }}" :active="request()->routeIs('overview')">
+                                {{ __('Overview Tipe Produk') }}
+                            </x-jet-nav-link> <br>
+                            <x-jet-nav-link href="{{ route('techSpecs.index') }}" :active="request()->routeIs('techSpecs')">
+                                {{ __('Tech Specs Tipe Produk') }}
+                            </x-jet-nav-link> <br>
+                            <x-jet-nav-link href="{{ route('compare.index') }}" :active="request()->routeIs('compare')">
+                                {{ __('Compare Tipe Produk') }}
+                            </x-jet-nav-link> <br>
+                           
+                           
+                        </div>
+                    </div>
+
+                    {{-- <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-jet-nav-link>
+                    </x-jet-nav-link> --}}
                     {{-- <x-jet-nav-link href="{{ route('home.index') }}" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-jet-nav-link> --}}
@@ -71,9 +103,9 @@
                     <x-jet-nav-link href="{{ route('artikel.index') }}" :active="request()->routeIs('artikel')">
                         {{ __('Artikel') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('produk.index') }}" :active="request()->routeIs('produk')">
+                    {{-- <x-jet-nav-link href="{{ route('produk.index') }}" :active="request()->routeIs('produk')">
                         {{ __('Produk') }}
-                    </x-jet-nav-link>
+                    </x-jet-nav-link> --}}
                      {{-- <x-jet-nav-link href="{{ route('blog.index') }}" :active="request()->routeIs('blog')">
                         {{ __('Blog') }}
                     </x-jet-nav-link>
