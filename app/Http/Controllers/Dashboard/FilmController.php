@@ -29,7 +29,7 @@ class FilmController extends Controller
     public function create()
     {
         $artikel = DB::table('artikel')->get();
-        return view('dashboard.film.tambah',compact('artikel'));
+        return view('dashboard.film.tambah', compact('artikel'));
     }
 
     /**
@@ -43,12 +43,10 @@ class FilmController extends Controller
         $request->validate([
             'name' => 'required',
             'title' => 'required',
-            'kategori' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $input = $request->all();
-
         if ($image = $request->file('image')) {
             $destinationPath = 'image/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -56,7 +54,21 @@ class FilmController extends Controller
             $input['image'] = "$profileImage";
         }
 
-        Gallery::create($input);
+        $galleryData = [
+            'name' => $input['name'],
+            'title' => $input['title'],
+            'kategori' => 'section-film',
+        ];
+
+        if (isset($input['image'])) {
+            $galleryData['image'] = $input['image'];
+        }
+
+        if (isset($input['artikel_id'])) {
+            $galleryData['artikel_id'] = $input['artikel_id'];
+        }
+
+        gallery::create($galleryData);
 
         return redirect(route('film.index'));
     }
@@ -69,7 +81,6 @@ class FilmController extends Controller
      */
     public function show($id)
     {
-        
     }
 
     /**
@@ -82,7 +93,7 @@ class FilmController extends Controller
     {
         $artikel = DB::table('artikel')->get();
         $gallery = DB::table('galleries')->where('id', $id)->first();
-        return view('dashboard.film.edit', compact('gallery','artikel'));
+        return view('dashboard.film.edit', compact('gallery', 'artikel'));
     }
 
     /**
@@ -124,7 +135,7 @@ class FilmController extends Controller
         }
         if (isset($input['artikel_id'])) {
             $gallery->artikel_id = $input['artikel_id'];
-        }   
+        }
 
         $gallery->save();
         return redirect(route('film.index'));
