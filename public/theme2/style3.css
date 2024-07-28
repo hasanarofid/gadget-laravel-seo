@@ -1,0 +1,127 @@
+/* Custom CSS for Navbar */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, .8);
+    width: 100%;
+    position: fixed;
+    color: black;
+    z-index: 1001; /* Ensure header is above the blurred content */
+}
+.navbar-custom {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+    color: black;
+    font-size: 12px; /* Adjust font size */
+}
+
+
+.submenu {
+    display: none;
+    position: absolute;
+    /* background-color: rgba(255, 255, 255, .8); */
+    background-color: white;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    left: 0;
+    top: 100%;
+}
+
+.submenu .container {
+    max-width: 1200px; /* Adjust to match header width */
+    margin: 0 auto;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.submenu .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.submenu .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.submenu-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.submenu a {
+    padding: 10px;
+    color: black;
+    font-size: 12px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.navbar-custom .has-submenu:hover .submenu {
+    display: block;
+}
+
+.submenu li:hover {
+    background-color: white;
+    /* background-color: rgba(255, 255, 255, .8); */
+}
+
+/* Custom style for search and bag icons */
+.navbar-nav .nav-link {
+    font-size: 12px; /* Adjust icon size */
+}
+
+.navbar-toggler {
+    border: none;
+    background: transparent;
+}
+
+.navbar-toggler svg {
+    fill: black; /* Change color of SVG */
+}
+
+/* Mobile View */
+@media (max-width: 992px) {
+    .navbar-nav.ml-auto {
+        margin-left: auto;
+    }
+
+    .navbar-nav.ml-auto.d-none.d-lg-flex {
+        display: flex !important;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0;
+    }
+}
+
+/* CSS for Navbar Brand */
+.navbar-brand img {
+    max-height: 20px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure image is displayed as a block-level element */
+    margin-top: 5px;
+}
+
+/* Optional: Center logo in navbar */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blur {
+    filter: blur(1px); /* Adjust blur intensity */
+    transition: filter 0.3s ease-in-out;
+}
