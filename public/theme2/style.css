@@ -216,14 +216,14 @@ github - github.com/adiyadav123 */
 .iphone_14_wonderful {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
-    height: 100vh;
-    background: url('./assets/iphone_wonderful_back_s.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding-top: 70px;
+    /* justify-content: center; */
+    /* height: 100vh; */
+    /* background: url('./assets/iphone_wonderful_back_s.jpg'); */
+    padding-top: 10px;
 }
 
 .iphone_14_head {
@@ -330,16 +330,27 @@ github - github.com/adiyadav123 */
 .watch_ipad .watch{
     height: 100%;
     width: 49%;
-    background-color: rgb(1,1,0);
+    background-color: #f5f5f7;
     display: flex;
     align-items: center;
-    /* justify-content: space-around; */
+    justify-content: space-around;
     flex-direction: column;
-    background: url('./assets/watch_8.jpg');
+    /* background: url('./assets/watch_8.jpg'); */
     background-size: cover;
     text-align: center;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.watch_ipad .watch .bg_watch{
+    background-color: #f5f5f7;
+    background-image: url(./assets/apple-store.png);
+    width: 450px;
+    height: 450px;
+    background-size: 450px 450px;
+    background-repeat: no-repeat;
+    margin-top: 50px;
+    bottom: -20px;
 }
 
 .watch_ipad .ipad{

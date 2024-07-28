@@ -21,7 +21,7 @@
 </div>
 
 <div class="iphone_14_wonderful">
-  <h1 class="iphone_14_head">iPhone 14</h1>
+  <!-- <h1 class="iphone_14_head">iPhone 14</h1>
   <h3 class="wonderful">Wonderfull.</h3>
   <div class="iphone_links">
     <a href="#">
@@ -34,10 +34,10 @@
         Buy <i class="fa-solid fa-chevron-right"></i>
       </button>
     </a>
-  </div>
+  </div> -->
 </div>
 
-<div class="features">
+<!-- <div class="features">
   <div class="easy">
     <p class="easy_to_switch">
       It's easy to switch from <br />
@@ -79,11 +79,12 @@
     </div>
     <div class="image"></div>
   </div>
-</div>
+</div> -->
 
 <div class="watch_ipad">
   <div class="watch">
-    <p class="watch_name">
+    <div class="bg_watch"></div>
+    <!-- <p class="watch_name">
       <i class="fa-brands fa-apple"></i>WATCH
     </p>
     <p class="series_8">SERIES 8</p>
@@ -99,7 +100,7 @@
           Buy <i class="fa-solid fa-chevron-right"></i>
         </button>
       </a>
-    </div>
+    </div> -->
     
   </div>
   <div class="ipad">
