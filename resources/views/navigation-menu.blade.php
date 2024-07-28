@@ -44,23 +44,18 @@
                             {{ __('Setting Home') }} <i class="fa fa-caret-down ml-1"></i>
                         </x-jet-nav-link>
                         <div class="absolute hidden group-hover:block bg-white shadow-lg mt-1 rounded-md">
-                            <x-jet-nav-link href="{{ route('gallery.index') }}" :active="request()->routeIs('gallery')">
-                                {{ __('Section Landing Page') }}
+                            <x-jet-nav-link href="{{ route('landingpage.index') }}" :active="request()->routeIs('landingpage')">
+                                {{ __('Landing Page') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="{{ route('gallleriSection1.index') }}" :active="request()->routeIs('produk')">
-                                {{ __('Section  Gambar 1 Kolom') }}
-                            </x-jet-nav-link><br>
-
-                            <x-jet-nav-link href="{{ route('menu.index') }}" :active="request()->routeIs('menu')">
-                                {{ __('Section  Gambar 2 Kolom') }}
-                            </x-jet-nav-link> <br>
-
-                            <x-jet-nav-link href="{{ route('submenu.index') }}" :active="request()->routeIs('submenu')">
-                                {{ __('Section Movie') }}
-                            </x-jet-nav-link> <br>
-                            <x-jet-nav-link href="{{ route('submenu.index') }}" :active="request()->routeIs('submenu')">
+                            <x-jet-nav-link href="{{ route('gambar.index') }}" :active="request()->routeIs('gambar')">
+                                {{ __('Section Gambar') }}
+                            </x-jet-nav-link>
+                            <x-jet-nav-link href="{{ route('film.index') }}" :active="request()->routeIs('film')">
+                                {{ __('Section Film') }}
+                            </x-jet-nav-link>
+                            <x-jet-nav-link href="{{ route('musik.index') }}" :active="request()->routeIs('musik')">
                                 {{ __('Section Music') }}
-                            </x-jet-nav-link> <br>
+                            </x-jet-nav-link>
                            
                         </div>
                     </div>

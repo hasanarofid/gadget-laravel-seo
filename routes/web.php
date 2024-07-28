@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Contact;
-use App\Http\Controllers\Dashboard\GallleriSection1Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Dashboard\ArtikelController;
+use App\Http\Controllers\Dashboard\FilmController;
+use App\Http\Controllers\Dashboard\GambarController;
+use App\Http\Controllers\Dashboard\LandingPageController;
 use App\Http\Controllers\Dashboard\MenuController;
+use App\Http\Controllers\Dashboard\MusikController;
 use App\Http\Controllers\Dashboard\SubmenuController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MisiController;
@@ -113,10 +116,25 @@ Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/artikel', 
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/artikel/destroy/{id}', 'App\Http\Controllers\Dashboard\ArtikelController@destroy');
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/artikel/edit/{id}', 'App\Http\Controllers\Dashboard\ArtikelController@edit');
 
-//galllery section 1
-Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/gallleriSection1', GallleriSection1Controller::class);
-Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/gallleriSection1/destroy/{id}', 'App\Http\Controllers\Dashboard\GallleriSection1Controller@destroy');
-Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/gallleriSection1/edit/{id}', 'App\Http\Controllers\Dashboard\GallleriSection1Controller@edit');
+//galllery Landing Page
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/landingpage', LandingPageController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/landingpage/destroy/{id}', 'App\Http\Controllers\Dashboard\LandingPageController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/landingpage/edit/{id}', 'App\Http\Controllers\Dashboard\LandingPageController@edit');
+
+//galllery Gamabar
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/gambar', GambarController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/gambar/destroy/{id}', 'App\Http\Controllers\Dashboard\GambarController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/gambar/edit/{id}', 'App\Http\Controllers\Dashboard\GambarController@edit');
+
+//galllery Movie
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/film', FilmController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/film/destroy/{id}', 'App\Http\Controllers\Dashboard\FilmController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/film/edit/{id}', 'App\Http\Controllers\Dashboard\FilmController@edit');
+
+//galllery Musik
+Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/musik', MusikController::class);
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/musik/destroy/{id}', 'App\Http\Controllers\Dashboard\MusikController@destroy');
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/musik/edit/{id}', 'App\Http\Controllers\Dashboard\MusikController@edit');
 
 // frontend
 Route::get('/','App\Http\Controllers\FrontendController@index');
