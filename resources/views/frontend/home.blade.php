@@ -1,6 +1,6 @@
 @extends('layouts.frontend_new')
 
-@section('title','Home')
+@section('title','Ophone')
 @section('content')
 
 <div class="iphone_14_pro_page">
