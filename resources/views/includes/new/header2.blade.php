@@ -77,22 +77,7 @@
 
 <div class="main_page">
   <div class="main_page_head">
-    <h1 class="main_head">
-      Save on Mac or iPad <br />
-      for university.
-    </h1>
-    <p class="plus_offer">
-      Plus get AirPods with Mac and Apple Pencil with iPad. <sup>1</sup>
-    </p>
-    <br />
-    <a href="#">
-      <button class="main_shop">
-        Shop now <i class="fa-solid fa-chevron-right"></i>
-      </button>
-    </a>
+  <img src="{{ asset('theme/assets/Apple-TV-MLS-Season-Pass-Leagues-Cup-team-players_big.jpg.large_2x.jpg') }}" alt="" />
   </div>
-  <br />
-  <div class="vid">
-    <img src="{{ asset('theme/assets/first_back.jpg') }}" alt="" />
-  </div>
+
 </div>

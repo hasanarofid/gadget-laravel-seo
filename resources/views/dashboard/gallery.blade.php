@@ -30,6 +30,9 @@
                                             Title
                                         </th>
                                         <th class="px-6 py-2 text-xs text-gray-500">
+                                            Kategori
+                                        </th>
+                                        <th class="px-6 py-2 text-xs text-gray-500">
                                             Url
                                         </th>
                                         <th class="px-6 py-2 text-xs text-gray-500">
@@ -55,6 +58,11 @@
                                          <td class="px-6 py-4">
                                             <div class=" text-gray-900">
                                             {{ $gallery->title }}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <div class=" text-gray-900">
+                                            {{ $gallery->kategori }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
