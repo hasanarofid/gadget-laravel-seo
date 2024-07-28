@@ -28,6 +28,13 @@ $galleries = [
             'title' => 'Character Animation Design',
             'kategori' => '-',
         ],
+        [
+            'image' =>'Apple-TV-MLS-Season-Pass-Leagues-Cup-team-players_big.jpg.large_2x.jpg',
+            'name' =>'Saya Sendiri',
+            'title' => 'Foto ketika acara pembagian hasil nilai',
+            'title' => 'Foto ketika acara pembagian hasil nilai',
+            'kategori' => 'section-landing-page',
+        ]
         ];
 
         DB::table('galleries')->insert($galleries);
