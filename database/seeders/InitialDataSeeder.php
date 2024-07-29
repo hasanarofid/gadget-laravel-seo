@@ -8,6 +8,7 @@ use App\Models\Produk;
 use App\Models\Menu;
 use App\Models\Artikel;
 use App\Models\SubMenu;
+use App\Models\Tipe;
 
 class InitialDataSeeder extends Seeder
 {
@@ -51,6 +52,23 @@ class InitialDataSeeder extends Seeder
 
         foreach ($produk as $p) {
             Produk::create($p);
+        }
+
+          // Tipe (with relations to Produk)
+          $tipe = [
+            ['produk_id' => 3, 'nama' => 'iPhone 14'],
+            ['produk_id' => 4, 'nama' => 'iPhone 14 Pro'],
+            ['produk_id' => 5, 'nama' => 'iPad Pro'],
+            ['produk_id' => 6, 'nama' => 'iPad Air'],
+            ['produk_id' => 7, 'nama' => 'Apple Watch Series 7'],
+            ['produk_id' => 8, 'nama' => 'Apple Watch SE'],
+            ['produk_id' => 9, 'nama' => 'Apple TV 4K'],
+            ['produk_id' => 11, 'nama' => 'AirPods Pro'],
+            ['produk_id' => 12, 'nama' => 'MagSafe Charger'],
+        ];
+
+        foreach ($tipe as $t) {
+            Tipe::create($t);
         }
 
         // Menu

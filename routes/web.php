@@ -158,7 +158,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/overviewProduk/e
 Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/overview', OverviewController::class);
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/overview/destroy/{id}', 'App\Http\Controllers\Dashboard\OverviewController@destroy');
 Route::middleware(['auth:sanctum', 'verified'])->get('dashboard/overview/edit/{id}', 'App\Http\Controllers\Dashboard\OverviewController@edit');
-
+Route::get('get-categories/{produkId}', [OverviewController::class, 'getCategories'])->name('get-categories');
 
 //techSpecs item produk
 Route::middleware(['auth:sanctum', 'verified'])->resource('/dashboard/techSpecs', TechSpecsController::class);

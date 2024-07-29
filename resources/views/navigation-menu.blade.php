@@ -73,7 +73,7 @@
                             <x-jet-nav-link href="{{ route('overviewProduk.index') }}" :active="request()->routeIs('overviewProduk')">
                                 {{ __('Overview Produk') }}
                             </x-jet-nav-link>
-                            <x-jet-nav-link href="{{ route('kategori.index') }}" :active="request()->routeIs('kategori')">
+                            <x-jet-nav-link href="{{ route('tipe.index') }}" :active="request()->routeIs('tipe')">
                                 {{ __('Kategori/Tipe Produk') }}
                             </x-jet-nav-link>
                            
